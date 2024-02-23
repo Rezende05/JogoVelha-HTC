@@ -1,0 +1,179 @@
+.player1 {
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid white;
+  padding-left: 15px;
+  outline: none;
+}
+
+.player1:focus{
+  border: 1px solid #0097E690;
+}
+
+.check-player2-wrapper{
+  margin-top: 20px;
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding-right: 9px;
+  border: 1px solid white;
+}
+
+.check-player2-wrapper:focus-within {
+  border: 1px solid #0097E690;
+}
+
+.player2 {
+  border: none;
+  background-color: transparent;
+  padding-left: 15px;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.check-player2{
+width: 56px;
+min-width: 56px;
+height: 32px;
+background-color: #0097E6;
+border-radius: 100px;
+display: flex;
+align-items: center;
+position: relative;
+border: 2px solid white;
+}
+
+.checkball-player2 {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-color: white;
+  position: absolute;
+  right: 26px;
+  transition: 300ms;
+}
+
+.check-player2:hover .checkball-player2{
+  right: 2px;
+}
+
+.match-type{
+  margin-top: 40px;
+}
+
+.match-type-text {
+  color: #45F391;
+  text-align: center;
+}
+
+.match-type-md {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.match-type-md-text {
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+.play-button-wrapper {
+  margin-top: 45px;
+}
+
+.button {
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 24px;
+  box-shadow: 0 4px 0 0 #00000025;
+  transition: 300ms;
+}
+
+.button:hover {
+  box-shadow: none;
+}
+
+.play-button {
+  color: #ffffff;
+  background-color: #45F391;
+}
+
+.match-history-text {
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 38px;
+}
+
+.match-history-list {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+  padding: 0 3px;
+}
+
+.match-history {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.match-history-winner {
+  width: 168px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 15px;
+}
+
+.winner {
+  color: #45F391;
+  font-size: 14px;
+}
+
+.play-winner {
+  color: #828282;
+  font-size: 14px;
+}
+
+.divider {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.battlefield-small {
+  width: 49px;
+  gap: 2px;
+}
+
+.battlefield-small .field-zone {
+ width: 15px;
+ height: 15px;
+ border-radius: 2px;
+ font-size: 12px;
+}
+
+.reset-button-wrapper {
+  margin-top: 100px;
+}
+
+.reset-button {
+  color: #0097E6;
+}

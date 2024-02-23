@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Jogo da Velha</title>
+</head>
+
+<body>
+  <main class="conteiner">
+    <section class="small-box">
+      <input type="text" placeholder="Jogador 1" class="player1">
+      <div class="check-player2-wrapper">
+        <input type="text" placeholder="Jogador 2" class="player2">
+        <div class="check-player2">
+          <div class="checkball-player2"></div>
+        </div>
+      </div>
+      <div class="match-type">
+        <h3 class="match-type-text">Tipo de Partida</h3>
+        <div class="match-type-md">
+          <span class="match-type-md-text">Melhor de 3</span>
+          <div class="check-player2">
+            <div class="checkball-player2"></div>
+          </div>
+          <span class="match-type-md-text">Melhor de 5</span>
+        </div>
+      </div>
+      <div class="play-button-wrapper">
+        <button class="button play-button">Jogar</button>
+      </div>
+      <h3 class="match-history-text">Historico de Partida</h3>
+      <ul class="match-history-list">
+        <li class="match-history">
+          <div class="match-history-winner">
+            <h3 class="winner">Vencedor</h3>
+            <p class="play-winner">Jogador 1</p>
+          </div>
+          <span class="divider">Cenário</span>
+          <div class="battlefield battlefield-small">
+            <div class="field-zone">X</div>
+            <div class="field-zone">O</div>
+            <div class="field-zone">X</div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+          </div>
+        </li>
+        <li class="match-history">
+          <div class="match-history-winner">
+            <h3 class="winner">Vencedor</h3>
+            <p class="play-winner">Jogador 1</p>
+          </div>
+          <span class="divider">Cenário</span>
+          <div class="battlefield battlefield-small">
+            <div class="field-zone">X</div>
+            <div class="field-zone">O</div>
+            <div class="field-zone">X</div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+          </div>
+        </li>
+        <li class="match-history">
+          <div class="match-history-winner">
+            <h3 class="winner">Vencedor</h3>
+            <p class="play-winner">Jogador 1</p>
+          </div>
+          <span class="divider">Cenário</span>
+          <div class="battlefield battlefield-small">
+            <div class="field-zone">X</div>
+            <div class="field-zone">O</div>
+            <div class="field-zone">X</div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+          </div>
+        </li>
+        <li class="match-history">
+          <div class="match-history-winner">
+            <h3 class="winner">Vencedor</h3>
+            <p class="play-winner">Jogador 1</p>
+          </div>
+          <span class="divider">Cenário</span>
+          <div class="battlefield battlefield-small">
+            <div class="field-zone">X</div>
+            <div class="field-zone">O</div>
+            <div class="field-zone">X</div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+            <div class="field-zone"></div>
+          </div>
+        </li>
+      </ul>
+      <div class="reset-button-wrapper">
+        <button class="button reset-button">Reiniciar</button>
+      </div>
+    </section>
+    <section class="big-box">
+      <div class="score-wrapper">
+        <h2 class="score-title">Placar</h2>
+        <div class="score-number">
+          <span class="score">01</span>
+          <span class="versus">X</span>
+          <span class="score">01</span>
+        </div>
+      </div>
+      <div class="battlefield">
+        <div class="field-zone">X</div>
+        <div class="field-zone">O</div>
+        <div class="field-zone">X</div>
+        <div class="field-zone"></div>
+        <div class="field-zone"></div>
+        <div class="field-zone"></div>
+        <div class="field-zone"></div>
+        <div class="field-zone"></div>
+        <div class="field-zone"></div>
+      </div>
+    </section>
+    <section class="small-box">
+      <h2 class="play-history-title">Histórico de Jogadas</h2>
+      <ul class="play-history-list">
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+        <li class="play-history-wrapper">
+          <h2 class="play">O</h2>
+          <div class="play-movement-wrapper">
+            <p class="player-movement">Jogador 1</p>
+            <p class="movement">Primeiro Quadrado</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>

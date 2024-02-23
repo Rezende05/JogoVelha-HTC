@@ -1,0 +1,51 @@
+.score-wrapper {
+  margin-top: 50px;
+  width: 45%;
+  height: 100px;
+  background-color: #FFFFFF;
+  text-align: center;
+  padding-top: 11px;
+  border-radius: 15px;
+}
+
+.score-title {
+  font-size: 24px;
+  color: #0097E6;
+}
+
+.score-number {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding-top: 11px;
+}
+
+.score{
+  font-size: 48px;
+  color: #0097E6;
+}
+
+.versus {
+  font-size: 40px;
+  color: #828282;
+}
+
+.battlefield {
+  display: flex;
+  flex-wrap: wrap;
+  width: 510px;
+  gap: 15px;
+}
+
+.field-zone {
+  width: 160px;
+  height: 160px;
+  border-radius: 15px;
+  font-size: 130px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #828282;
+}
