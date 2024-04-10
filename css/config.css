@@ -11,7 +11,7 @@
   border: 1px solid #0097E690;
 }
 
-.check-player2-wrapper{
+.check-mode-wrapper{
   margin-top: 20px;
   width: 100%;
   height: 48px;
@@ -23,7 +23,7 @@
   border: 1px solid white;
 }
 
-.check-player2-wrapper:focus-within {
+.check-mode-wrapper:focus-within {
   border: 1px solid #0097E690;
 }
 
@@ -36,7 +36,7 @@
   height: 100%;
 }
 
-.check-player2{
+.check-mode{
 width: 56px;
 min-width: 56px;
 height: 32px;
@@ -48,7 +48,7 @@ position: relative;
 border: 2px solid white;
 }
 
-.checkball-player2 {
+.checkball-mode {
   width: 24px;
   height: 24px;
   border-radius: 100%;
@@ -58,7 +58,7 @@ border: 2px solid white;
   transition: 300ms;
 }
 
-.check-player2:hover .checkball-player2{
+.check-active .checkball-mode{
   right: 2px;
 }
 
@@ -171,9 +171,10 @@ border: 2px solid white;
 }
 
 .reset-button-wrapper {
-  margin-top: 100px;
+  margin-top: 20%;
 }
 
 .reset-button {
   color: #0097E6;
 }
+

@@ -1,6 +1,7 @@
 const field = {
   start: true,
   move: 'X',
+  boot: false,
   players: {
     score1: 0,
     score2: 0,
@@ -95,6 +96,15 @@ function movePlayer(name) {
 </li>`;
 }
 
+function checkMode(className, callback) {
+  const $checkball = document.querySelector(className)
+
+  $checkball.addEventListener('click', () => {
+    $checkball.classList.toggle('check-active')
+    callback()
+  })
+}
+
 for (let i = 0; i < 9; i++) {
   const $field = allField(i);
 
@@ -119,3 +129,8 @@ for (let i = 0; i < 9; i++) {
     playMove();
   });
 }
+
+checkMode('.check-mode', () => {
+ field.boot = !field.boot
+ console.log(field.boot)
+})
