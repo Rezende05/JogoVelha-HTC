@@ -1,7 +1,8 @@
 const field = {
   start: true,
   move: 'X',
-  boot: false,
+  bot: false,
+  localMove: '',
   players: {
     score1: 0,
     score2: 0,
@@ -85,13 +86,14 @@ function printWinnerName(winnerName) {
 
 function movePlayer(name) {
   const moveList = document.querySelector('.play-history-list');
+  const move = localMove()
   moveList.innerHTML =
     moveList.innerHTML +
     `<li class="play-history-wrapper">
   <h2 class="play">${field.move}</h2>
   <div class="play-movement-wrapper">
     <p class="player-movement">${name}</p>
-    <p class="movement">Primeiro Quadrado</p>
+    <p class="movement">${field.localMove}</p>
   </div>
 </li>`;
 }
@@ -105,32 +107,92 @@ function checkMode(className, callback) {
   })
 }
 
+function botMove() {
+  const move = randomNumber(8)
+  const $field = allField(move)
+  const cantPLay = draw()
+  const winner = getWinner()
+  if (cantPLay || winner) return
+  if ($field.textContent !== '') {
+    return botMove()
+  }
+  play($field)
+}
+
+function randomNumber(max) {
+  const number = Math.floor(Math.random() * max + 1)
+  return number
+}
+
+function draw() {
+  const $fieldList = document.querySelectorAll('.field-zone-big')
+  let filldFields = 0
+  for (const $field of $fieldList) {
+    if ($field.textContent) filldFields++
+  }
+  const winner = getWinner()
+
+  if (filldFields === 9 && !winner) {
+    return true
+  }
+
+  return false
+}
+
+function localMove(move) {
+  const $fieldList = document.querySelectorAll('.field-zone-big')
+  $fieldList.forEach((item, index) => {
+    item.addEventListener('click', () => {
+     if(index === 0){field.localMove = 'Primeiro Quadrado'}
+     if(index === 1){field.localMove = 'Segundo Quadrado'}
+     if(index === 2){field.localMove = 'Terceiro Quadrado'}
+     if(index === 3){field.localMove = 'Quarto Quadrado'}
+     if(index === 4){field.localMove = 'Quinto Quadrado'}
+     if(index === 5){field.localMove = 'Sexto Quadrado'}
+     if(index === 6){field.localMove = 'Setimo Quadrado'}
+     if(index === 7){field.localMove = 'Oitavo Quadrado'}
+     if(index === 8){field.localMove = 'Nono Quadrado'}
+    })
+  })
+}
+
+localMove()
+
+function play($field) {
+  if ($field.textContent !== '' || field.start === false) return;
+  $field.textContent = field.move;
+  const winner = getWinner();
+  const playerMove = getPlayerMove(field.move);
+  movePlayer(playerMove);
+  if (winner !== '') {
+    setWinner(winner);
+    printWinner(winner);
+    const winnerName = getPlayerMove(winner);
+    printWinnerName(winnerName);
+    setTimeout(resetFieldZone, 1000);
+    field.start = false;
+    setTimeout(() => {
+      field.start = true;
+      field.move = 'X';
+    }, 1000);
+  }
+  const hasDraw = draw()
+  if (hasDraw) {
+    setTimeout(resetFieldZone, 1000);
+  }
+  playMove();
+}
+
 for (let i = 0; i < 9; i++) {
   const $field = allField(i);
 
   $field.addEventListener('click', () => {
-    if ($field.textContent !== '' || field.start === false) return;
-    $field.textContent = field.move;
-    const winner = getWinner();
-    const playerMove = getPlayerMove(field.move);
-    movePlayer(playerMove);
-    if (winner !== '') {
-      setWinner(winner);
-      printWinner(winner);
-      const winnerName = getPlayerMove(winner);
-      printWinnerName(winnerName);
-      setTimeout(resetFieldZone, 1000);
-      field.start = false;
-      setTimeout(() => {
-        field.start = true;
-        field.move = 'X';
-      }, 1000);
-    }
-    playMove();
+    play($field)
+    if (field.bot) botMove()
   });
 }
 
 checkMode('.check-mode', () => {
- field.boot = !field.boot
- console.log(field.boot)
+  field.bot = !field.bot
 })
+
